@@ -1,0 +1,14 @@
+/dist/
+/release/
+/test-output/
+/.vs/
+*.user
+*.suo
+*.pdb
+*.exe
+config.json
+config.json.tmp
+monitor-*.json
+*.jsonl
+*.log
+before.json

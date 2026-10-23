@@ -1,0 +1,21 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Build, test, and package
+        shell: powershell
+        run: .\scripts\package.ps1
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: AudioDefaultsSync-win-x64
+          path: |
+            release/*.zip
+            release/*.sha256
